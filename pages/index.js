@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
@@ -45,7 +46,11 @@ export default function Home({ data }) {
               <Swiper navigation={true} className="mySwiper">
                 {item.images.map((image) => (
                   <SwiperSlide key={image.id}>
-                    <img src={image.url} />
+                    <Image
+                      src={image.url}
+                      alt={`Image ${image.id}`}
+                      layout="fill"
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
